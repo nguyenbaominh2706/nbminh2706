@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Toán Học - GitHub Pages</title>
+    <style>
+        :root {
+            --primary: #4a6baf;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid var(--secondary);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .github-info {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .github-info h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .steps {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .steps li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .input-area {
+            margin-bottom: 1rem;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .upload-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background 0.3s;
+        }
+        
+        .upload-btn:hover {
+            background: #3a559d;
+        }
+        
+        .result-area {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            min-height: 100px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .game-container {
+            text-align: center;
+        }
+        
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .game-cell {
+            width: 100px;
+            height: 100px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .game-cell:hover {
+            background-color: #e9ecef;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .game-board {
+                grid-template-columns: repeat(3, 80px);
+            }
+            
+            .game-cell {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trang Web Toán Học</h1>
+        <p>4 Chức Năng Hữu Ích Cho Học Tập</p>
+    </header>
+
+    <div class="github-info">
+        <h2>Hướng Dẫn Đăng Trang Web Lên GitHub Pages</h2>
+        <ol class="steps">
+            <li>Tạo tài khoản GitHub tại <a href="https://github.com" target="_blank">github.com</a></li>
+            <li>Tạo repository mới với tên: username.github.io (thay username bằng tên của bạn)</li>
+            <li>Tạo file index.html và sao chép nội dung này vào</li>
+            <li>Vào Settings → Pages → Chọn branch main → Save</li>
+            <li>Truy cập username.github.io để xem trang web của bạn</li>
+        </ol>
+        <p>Xem hướng dẫn chi tiết trong phần mã nguồn của trang web này.</p>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>Giải Toán bằng AI</h3>
+                <p>Tải lên hình ảnh bài toán hoặc mô tả bằng lời, hệ thống AI sẽ giải đáp chi tiết.</p>
+                <div class="input-area">
+                    <textarea placeholder="Nhập bài toán của bạn hoặc tải lên hình ảnh..."></textarea>
+                    <input type="file" id="math-image" accept="image/*" style="display: none;">
+                    <button class="upload-btn" onclick="document.getElementById('math-image').click()">Tải Ảnh Lên</button>
+                </div>
+                <button class="upload-btn">Giải Bài Toán</button>
+                <div class="result-area">
+                    Kết quả sẽ hiển thị ở đây...
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Kiểm Tra Lỗi Sai</h3>
+                <p>Kiểm tra phần trình bày bài làm, phát hiện lỗi sai và gợi ý cách cải thiện.</p>
+                <div class="input-area">
+                    <textarea placeholder="Nhập bài làm của bạn hoặc tải lên hình ảnh..."></textarea>
+                    <input type="file" id="solution-image" accept="image/*" style="display: none;">
+                    <button class="upload-btn" onclick="document.getElementById('solution-image').click()">Tải Ảnh Lên</button>
+                </div>
+                <button class="upload-btn">Kiểm Tra Lỗi</button>
+                <div class="result-area">
+                    Phân tích lỗi sẽ hiển thị ở đây...
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+                <h3>Tài Liệu Học Tập</h3>
+                <p>Yêu cầu tài liệu bạn cần, hệ thống sẽ cung cấp tài nguyên phù hợp.</p>
+                <div class="input-area">
+                    <textarea placeholder="Bạn cần tài liệu về chủ đề nào?"></textarea>
+                </div>
+                <button class="upload-btn">Tìm Tài Liệu</button>
+                <div class="result-area">
+                    <ul>
+                        <li><a href="#">Tài liệu Đại số 10</a></li>
+                        <li><a href="#">Bài tập Hình học 11</a></li>
+                        <li><a href="#">Đề thi Giải tích 12</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎮</div>
+                <h3>Trò Chơi & Đề Thi</h3>
+                <p>Thử thách bản thân với các trò chơi toán học và đề thi thử.</p>
+                <div class="game-container">
+                    <p>Chọn trò chơi hoặc đề thi:</p>
+                    <select style="padding: 0.5rem; width: 100%; margin: 1rem 0;">
+                        <option>Đố vui Toán học</option>
+                        <option>Đề thi Đại số 10</option>
+                        <option>Đề thi Hình học 11</option>
+                        <option>Đề thi Giải tích 12</option>
+                    </select>
+                    <button class="upload-btn">Bắt Đầu</button>
+                    
+                    <div class="game-board">
+                        <div class="game-cell">5</div>
+                        <div class="game-cell">+</div>
+                        <div class="game-cell">3</div>
+                        <div class="game-cell">×</div>
+                        <div class="game-cell">2</div>
+                        <div class="game-cell">=</div>
+                        <div class="game-cell">?</div>
+                        <div class="game-cell">11</div>
+                        <div class="game-cell">16</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Trang Web Toán Học &copy; 2023. Được triển khai trên GitHub Pages.</p>
+    </footer>
+
+    <script>
+        // Các hàm JavaScript sẽ được thêm vào đây để xử lý tương tác
+        document.addEventListener('DOMContentLoaded', function() {
+            // Xử lý tải file ảnh
+            document.getElementById('math-image').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    alert(`Đã tải lên ảnh: ${file.name}`);
+                }
+            });
+            
+            document.getElementById('solution-image').addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    alert(`Đã tải lên ảnh: ${file.name}`);
+                }
+            });
+            
+            // Xử lý trò chơi
+            const gameCells = document.querySelectorAll('.game-cell');
+            gameCells.forEach(cell => {
+                cell.addEventListener('click', function() {
+                    this.style.backgroundColor = '#4ecdc4';
+                    this.style.color = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
